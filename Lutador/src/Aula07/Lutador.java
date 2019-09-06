@@ -14,10 +14,22 @@ public class Lutador {
    
    //Metodos
    public void apresenta(){
-       
+       System.out.println("Lutador: " +getNome());
+       System.out.println("Nacionalidade: "+getNacionalidade());
+       System.out.println("idade: "+getIdade()+" Anos");
+       System.out.println("altura: "+getAltura()+ "m");
+       System.out.println("Peso: "+getPeso()+"Kg");
+       System.out.println("Categoria: " +getCategoria());
+       System.out.println("Vitorias: "+getVitorias());
+       System.out.println("Derrotas: "+getDerrotas());
+       System.out.println("Empates: "+getEmpates());
    }
    public void status(){
-       
+       System.out.println(getNome());
+       System.out.println("É um peso "+getCategoria());
+       System.out.println(getVitorias()+" Vitórias");
+       System.out.println(getDerrotas()+" Derrotas");
+       System.out.println(getEmpates()+" Empates");
    }
    public void ganharLuta(){
       setVitorias(getVitorias() + 1); 
