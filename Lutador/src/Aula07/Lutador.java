@@ -14,19 +14,19 @@ public class Lutador {
    
    //Metodos
    public void apresenta(){
-       System.out.println("Lutador: " +getNome());
-       System.out.println("Nacionalidade: "+getNacionalidade());
-       System.out.println("idade: "+getIdade()+" Anos");
-       System.out.println("altura: "+getAltura()+ "m");
-       System.out.println("Peso: "+getPeso()+"Kg");
+       System.out.println("CHEGOU A HORA!!!! Apresentamos o lutador " +getNome());
+       System.out.println("Diretamente da "+getNacionalidade());
+       System.out.println("Com a idade de "+getIdade()+" Anos");
+       System.out.println("Com "+getAltura()+ "m de altura");
+       System.out.println("Pesando "+getPeso()+"Kg");
        System.out.println("Categoria: " +getCategoria());
-       System.out.println("Vitorias: "+getVitorias());
-       System.out.println("Derrotas: "+getDerrotas());
-       System.out.println("Empates: "+getEmpates());
+       System.out.println(getVitorias()+" Vitorias");
+       System.out.println(getDerrotas()+" Derrotas");
+       System.out.println(getEmpates()+" Empates");
    }
    public void status(){
        System.out.println(getNome());
-       System.out.println("É um peso "+getCategoria());
+       System.out.println("É um "+getCategoria());
        System.out.println(getVitorias()+" Vitórias");
        System.out.println(getDerrotas()+" Derrotas");
        System.out.println(getEmpates()+" Empates");
@@ -42,13 +42,13 @@ public class Lutador {
    }
    
    //Metodo Construtor
-   public Lutador(String ne, String na, int id, float pe, float al, String ca, int vi, int de, int em){
-       this.nome = na;
+   public Lutador(String no, String na, int id, float pe, 
+                  float al, int vi, int de, int em){
+       this.nome = no;
        this.nacionalidade = na;
        this.idade = id;
-       this.setPeso(pe);
+       this.setPeso(pe);    //Colocando dessa forma para que quando for chamado executar o setCategoria.
        this.altura = al;
-       this.categoria = ca;
        this.vitorias = vi;
        this.derrotas = de;
        this.empates = em;
@@ -86,7 +86,7 @@ public class Lutador {
 
     public void setPeso(float pe) {
         this.peso = pe;
-        setCategoria(Float.toString(pe));
+        setCategoria();
     }
 
     public float getAltura() {
@@ -101,7 +101,7 @@ public class Lutador {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    private void setCategoria() {
      
         if(getPeso() < 52.2){
             this.categoria = "Invalido, Abaixo do peso";
