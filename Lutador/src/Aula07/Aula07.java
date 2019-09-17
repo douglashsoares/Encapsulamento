@@ -13,7 +13,9 @@ public class Aula07 {
          L[5] = new Lutador("Nerdaart","EUA",30,105.7f,1.81f,12,2,4);
          
         
-         L[3].status();
+    Luta campeonato = new Luta();
+    campeonato.marcarLuta(L[5], L[5]);
+    campeonato.lutar();
          
          
          
